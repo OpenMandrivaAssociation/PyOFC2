@@ -101,8 +101,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f INSTALLED_FILES
 %defattr(-,root,root)
-/usr/lib/python2.6/site-packages/PyOFC2-0.1.5dev-py2.6.egg-info/PKG-INFO
-/usr/lib/python2.6/site-packages/PyOFC2-0.1.5dev-py2.6.egg-info/*.txt
-/usr/lib/python2.6/site-packages/PyOFC2-0.1.5dev-py2.6.egg-info/not-zip-safe
-/usr/lib/python2.6/site-packages/pyofc2/__init__.py
+%{py_sitedir}/PyOFC2-0.1.5dev-py2.6.egg-info/PKG-INFO
+%{py_sitedir}/PyOFC2-0.1.5dev-py2.6.egg-info/*.txt
+%{py_sitedir}/PyOFC2-0.1.5dev-py2.6.egg-info/not-zip-safe
+%{py_sitedir}/pyofc2/__init__.py
 #/usr/lib/python2.6/site-packages/pyofc2/ofc2.py
