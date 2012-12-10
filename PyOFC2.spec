@@ -1,17 +1,12 @@
-%define name PyOFC2
-%define version 0.1.5dev
 %define unmangled_version 0.1.5dev
-%define unmangled_version 0.1.5dev
-%define release 1
 
 Summary: Python library for Open Flash Chart 2
-Name: %{name}
-Version: %{version}
-Release: %{release}
+Name:    PyOFC2
+Version: 0.1.5dev
+Release: 2
 Source0: %{name}-%{unmangled_version}.tar.gz
 License: MIT
 Group: Development/Python
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 BuildArch: noarch
 Url: http://pradeepgowda.com/
@@ -79,16 +74,16 @@ python setup.py build
 
 %install
 #python setup.py install --single-version-externally-managed --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
-python setup.py install  --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
+python setup.py install  --root=%{buildroot} --record=INSTALLED_FILES
 
 # Sort the filelist so that directories appear before files. This avoids
 # dublicate filename problems on some systems
 touch DIRS
 for i in `cat INSTALLED_FILES`; do
-    if [ -f ${RPM_BUILD_ROOT}/$i ]; then
+    if [ -f %{buildroot}/$i ]; then
 	echo $i >>FILES
     fi
-    if [ -d ${RPM_BUILD_ROOT}/$i ]; then
+    if [ -d %{buildroot}/$i ]; then
 	echo %dir $i >>DIRS
     fi
 done
@@ -96,10 +91,12 @@ done
 # Make sure we match f00.pyo and foo.pyc along with foo.py (but only once each)
 sed -e "/\.py[co]$/d" -e "s/\.py$/.py*/" DIRS FILES >INSTALLED_FILES
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files -f INSTALLED_FILES
-%defattr(-,root,root)
-%{py_sitedir}/pyofc2/__init__.py
+#%{py_sitedir}/pyofc2/__init__.py
 #/usr/lib/python2.6/site-packages/pyofc2/ofc2.py
+
+%changelog
+* Wed Dec 07 2011 Pischulin Anton <apischulin@mandriva.org> 0.1.5dev-1
++ Revision: 738480
+- add PyOFC2 sources
+
