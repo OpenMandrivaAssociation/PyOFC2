@@ -3,7 +3,7 @@
 Summary: Python library for Open Flash Chart 2
 Name:    PyOFC2
 Version: 0.1.5dev
-Release: 2
+Release: 3
 Source0: %{name}-%{unmangled_version}.tar.gz
 License: MIT
 Group: Development/Python
@@ -18,7 +18,8 @@ BuildRequires: python-devel python-setuptools
 PyOFC2 - Python libraries for Open Flash Chart
 ==============================================
 
-PyOFC2 generates data files required for `Open Flash Chart 2 <http://teethgrinder.co.uk/open-flash-chart-2/>`_.
+PyOFC2 generates data files required for `Open Flash Chart 2
+<http://teethgrinder.co.uk/open-flash-chart-2/>`_.
 
 Installation
 ------------
