@@ -3,7 +3,7 @@
 Summary: Python library for Open Flash Chart 2
 Name:    PyOFC2
 Version: 0.1.5dev
-Release: 3
+Release: 4
 Source0: %{name}-%{unmangled_version}.tar.gz
 License: MIT
 Group: Development/Python
