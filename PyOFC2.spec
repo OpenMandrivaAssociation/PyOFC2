@@ -9,7 +9,7 @@ License: MIT
 Group: Development/Python
 Prefix: %{_prefix}
 BuildArch: noarch
-Url: http://pradeepgowda.com/
+Url: https://pradeepgowda.com/
 AutoReq: 0
 
 BuildRequires: python-devel python-setuptools
